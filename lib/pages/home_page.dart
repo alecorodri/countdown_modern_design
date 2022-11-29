@@ -32,9 +32,8 @@ class _HomePageState extends State<HomePage> {
           countdounProvider.startStopTimer();
         },
         tooltip: 'Start',
-        child: Icon(countdounProvider.isRunning
-            ? Icons.pause_circle_outline
-            : Icons.play_arrow_outlined),
+        child:
+            Icon(countdounProvider.isRunning ? Icons.pause : Icons.play_arrow),
       ),
     );
   }
@@ -49,18 +48,19 @@ class _CounterView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          Icon(
+        children: [
+          const Icon(
             Icons.timer_outlined,
             color: Colors.blue,
             size: 60,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Text(
-            '00:30',
-            style: TextStyle(fontSize: 50),
+            context.select(
+                (CountdounProvider countdown) => countdown.timeLeftString),
+            style: const TextStyle(fontSize: 50),
           )
         ],
       ),
