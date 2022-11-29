@@ -1,4 +1,6 @@
+import 'package:countdown_modern_design/providers/countdown_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final countdounProvider = Provider.of<CountdounProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -25,10 +29,12 @@ class _HomePageState extends State<HomePage> {
       body: const _CounterView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Start Timer
+          countdounProvider.startStopTimer();
         },
         tooltip: 'Start',
-        child: const Icon(Icons.play_arrow_outlined),
+        child: Icon(countdounProvider.isRunning
+            ? Icons.pause_circle_outline
+            : Icons.play_arrow_outlined),
       ),
     );
   }
