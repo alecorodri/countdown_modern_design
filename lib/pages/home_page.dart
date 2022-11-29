@@ -12,19 +12,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("CountDown"),
         actions: [
           IconButton(
               onPressed: () {
-                //TODO Reiniciar el timer
+                // Reiniciar el timer
               },
               icon: const Icon(Icons.restart_alt_outlined))
         ],
       ),
-      // body: _CounterView(),
+      body: const _CounterView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //TODO Start Timer
+          // Start Timer
         },
         tooltip: 'Start',
         child: const Icon(Icons.play_arrow_outlined),
@@ -44,7 +45,7 @@ class _CounterView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Icon(
-            Icons.timer_10_outlined,
+            Icons.timer_outlined,
             color: Colors.blue,
             size: 60,
           ),
