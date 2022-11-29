@@ -17,11 +17,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("CountDown"),
+        title: const Text("Countdown"),
         actions: [
           IconButton(
               onPressed: () {
-                // Reiniciar el timer
+                countdounProvider
+                    .setCountdownDuration(const Duration(seconds: 60));
               },
               icon: const Icon(Icons.restart_alt_outlined))
         ],
