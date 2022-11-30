@@ -58,57 +58,70 @@ class _CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = Random().nextInt(150) + 200.toDouble();
-    return Center(
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 550),
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: const Color(0xFFE7ECEF),
-          boxShadow: [
-            BoxShadow(
-                offset: const Offset(-20, -20),
-                blurRadius: 60,
-                color: Colors.white,
-                inset: context.select(
-                    (CountdounProvider countdown) => countdown.isRunning)),
-            BoxShadow(
-                offset: const Offset(20, 20),
-                blurRadius: 60,
-                color: const Color(0xFFBEBEBE),
-                inset: !context.select(
-                    (CountdounProvider countdown) => countdown.isRunning)),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.timer_outlined,
-              color: !context.select(
-                      (CountdounProvider countdown) => countdown.isRunning)
-                  ? Colors.grey
-                  : Colors.black,
-              size: 60,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        // Row(
+        //   children: [
+        //     ElevatedButton(
+        //       onPressed: () {},
+        //       child: const Text("data"),
+        //     ),
+        //   ],
+        // ),
+        Center(
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 550),
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: const Color(0xFFE7ECEF),
+              boxShadow: [
+                BoxShadow(
+                    offset: const Offset(-20, -20),
+                    blurRadius: 60,
+                    color: Colors.white,
+                    inset: context.select(
+                        (CountdounProvider countdown) => countdown.isRunning)),
+                BoxShadow(
+                    offset: const Offset(20, 20),
+                    blurRadius: 60,
+                    color: const Color(0xFFBEBEBE),
+                    inset: !context.select(
+                        (CountdounProvider countdown) => countdown.isRunning)),
+              ],
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              context.select(
-                  (CountdounProvider countdown) => countdown.timeLeftString),
-              style: TextStyle(
-                  fontSize: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.timer_outlined,
                   color: !context.select(
                           (CountdounProvider countdown) => countdown.isRunning)
                       ? Colors.grey
-                      : Colors.black),
+                      : Colors.black,
+                  size: 60,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  context.select((CountdounProvider countdown) =>
+                      countdown.timeLeftString),
+                  style: TextStyle(
+                      fontSize: 50,
+                      color: !context.select((CountdounProvider countdown) =>
+                              countdown.isRunning)
+                          ? Colors.grey
+                          : Colors.black),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }
