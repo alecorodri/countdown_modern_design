@@ -36,6 +36,10 @@ class CountdounProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool get running {
+    return isRunning;
+  }
+
   String get timeLeftString {
     final minutes =
         ((duration.inSeconds / 60) % 60).floor().toString().padLeft(2, '0');
