@@ -43,7 +43,6 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           countdounProvider.startStopTimer();
         },
-        tooltip: 'Start',
         child:
             Icon(countdounProvider.isRunning ? Icons.pause : Icons.play_arrow),
       ),
@@ -59,8 +58,8 @@ class _CounterView extends StatelessWidget {
     return Center(
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 550),
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 250,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: const Color(0xFFE7ECEF),
