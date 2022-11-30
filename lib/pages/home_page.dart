@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:countdown_modern_design/providers/countdown_provider.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:provider/provider.dart';
@@ -55,11 +57,12 @@ class _CounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double size = Random().nextInt(150) + 200.toDouble();
     return Center(
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 550),
-        width: 250,
-        height: 250,
+        width: size,
+        height: size,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: const Color(0xFFE7ECEF),
