@@ -59,16 +59,17 @@ class _CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = Random().nextInt(150) + 200.toDouble();
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        // Row(
-        //   children: [
-        //     ElevatedButton(
-        //       onPressed: () {},
-        //       child: const Text("data"),
-        //     ),
-        //   ],
-        // ),
+        Row(
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("data"),
+            ),
+          ],
+        ),
         Center(
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 550),
@@ -120,6 +121,9 @@ class _CounterView extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        const SizedBox(
+          height: 30.0,
         ),
       ],
     );
