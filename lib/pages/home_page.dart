@@ -63,12 +63,7 @@ class _CounterView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("data"),
-            ),
-          ],
+          children: [],
         ),
         Center(
           child: AnimatedContainer(
