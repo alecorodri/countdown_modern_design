@@ -72,14 +72,14 @@ class _CounterView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ClayContainer(
-              child: Center(
-                  child: Text('10"',
-                      style: TextStyle(color: Colors.black, fontSize: 30))),
               color: baseColor,
               height: 80,
               width: 80,
               borderRadius: 75,
               curveType: CurveType.none,
+              child: const Center(
+                  child: Text('10"',
+                      style: TextStyle(color: Colors.black, fontSize: 30))),
             ),
             const SizedBox(
               width: 50,
