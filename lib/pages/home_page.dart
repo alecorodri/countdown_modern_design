@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:clay_containers/constants.dart';
+import 'package:clay_containers/widgets/clay_container.dart';
 import 'package:countdown_modern_design/providers/countdown_provider.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:provider/provider.dart';
@@ -58,12 +60,57 @@ class _CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = Random().nextInt(150) + 200.toDouble();
+    Color baseColor = const Color(0xFFF2F2F2);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const SizedBox(),
         Row(
-          children: [],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ClayContainer(
+              child: Center(
+                  child: Text('10"',
+                      style: TextStyle(color: Colors.black, fontSize: 30))),
+              color: baseColor,
+              height: 80,
+              width: 80,
+              borderRadius: 75,
+              curveType: CurveType.none,
+            ),
+            const SizedBox(
+              width: 50,
+            ),
+            ClayContainer(
+              child: GestureDetector(
+                onTap: () {},
+                child: Center(
+                    child: Text('15"',
+                        style: TextStyle(color: Colors.black, fontSize: 30))),
+              ),
+              color: baseColor,
+              height: 80,
+              width: 80,
+              borderRadius: 75,
+              curveType: CurveType.none,
+            ),
+            const SizedBox(
+              width: 50,
+            ),
+            ClayContainer(
+              child: Center(
+                  child: Text('20"',
+                      style: TextStyle(color: Colors.black, fontSize: 30))),
+              color: baseColor,
+              height: 80,
+              width: 80,
+              borderRadius: 75,
+              curveType: CurveType.none,
+            ),
+          ],
         ),
         Center(
           child: AnimatedContainer(

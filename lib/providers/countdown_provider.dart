@@ -40,6 +40,10 @@ class CountdounProvider extends ChangeNotifier {
     return isRunning;
   }
 
+  set timeLeft(Duration value) {
+    duration = value;
+  }
+
   String get timeLeftString {
     final minutes =
         ((duration.inSeconds / 60) % 60).floor().toString().padLeft(2, '0');
