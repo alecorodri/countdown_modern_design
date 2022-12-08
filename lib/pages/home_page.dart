@@ -85,17 +85,17 @@ class _CounterView extends StatelessWidget {
               width: 50,
             ),
             ClayContainer(
-              // child:  GestureDetector(
-              //   onTap: () {},
-              //   child: Center(
-              //       child: Text('15"',
-              //           style: TextStyle(color: Colors.black, fontSize: 30))),
-              // ),
               color: baseColor,
               height: 80,
               width: 80,
               borderRadius: 75,
               curveType: CurveType.none,
+              child: GestureDetector(
+                onTap: () {},
+                child: const Center(
+                    child: Text('15"',
+                        style: TextStyle(color: Colors.black, fontSize: 30))),
+              ),
             ),
             const SizedBox(
               width: 50,
